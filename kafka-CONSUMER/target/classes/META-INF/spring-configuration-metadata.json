@@ -1,0 +1,17 @@
+{
+  "groups": [
+    {
+      "name": "cons",
+      "type": "com.example.demo.Prop",
+      "sourceType": "com.example.demo.Prop"
+    }
+  ],
+  "properties": [
+    {
+      "name": "cons.bootstrapaddress",
+      "type": "java.lang.String",
+      "sourceType": "com.example.demo.Prop"
+    }
+  ],
+  "hints": []
+}
