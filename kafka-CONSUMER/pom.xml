@@ -30,12 +30,13 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
 
-<!--&lt;!&ndash;			<exclusions>&ndash;&gt;-->
-<!--&lt;!&ndash;				<exclusion>&ndash;&gt;-->
-<!--&lt;!&ndash;					<groupId>org.springframework.boot</groupId>&ndash;&gt;-->
-<!--&lt;!&ndash;					<artifactId>spring-boot-starter-logging</artifactId>&ndash;&gt;-->
-<!--&lt;!&ndash;				</exclusion>&ndash;&gt;-->
-<!--&lt;!&ndash;			</exclusions>&ndash;&gt;-->
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-logging</artifactId>
+				</exclusion>
+			</exclusions>
+
 		</dependency>
 
 		<dependency>

@@ -8,6 +8,8 @@ import org.springframework.kafka.support.KafkaHeaders;
 import org.springframework.messaging.handler.annotation.Header;
 import org.springframework.messaging.handler.annotation.Payload;
 
+import java.util.concurrent.ThreadLocalRandom;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Listener {
@@ -35,16 +37,20 @@ public class Listener {
         return this.groupId;
     }
 
-    @KafkaListener(id = "#{__listener.id}", topics = "#{__listener.topic}", groupId="__listener.groupId" )
-    public void listen1(Acknowledgment ack, SmsMessage message, ConsumerRecordMetadata meta) {
+    @KafkaListener(id = "#{__listener.id}", topics = "#{__listener.topic}", groupId="#{__listener.groupId}" )
+    public void listen1(Acknowledgment ack, SmsMessage message, ConsumerRecordMetadata meta) throws Exception {
 
-        System.out.println(message.getIntErrorText());
-
-        System.out.println("Прочитано:" + increment.getAndIncrement());
+        if (ThreadLocalRandom.current().nextInt(0, 10) == 5)
+        {
+            System.out.println("["+getId() + "] [Партиция " + meta.partition() + "] Прочитано всего" + increment.get()+ ": Сообщение содержит ID = " +  message.getIntErrorText());
+            System.out.println("["+getId() + "] [ERROR] Ошибка: " + increment.get());
+            throw new Exception("Шанс 10% на ошибку");
+        }
+        System.out.println("["+getId() + "] [Партиция " + meta.partition() + "] Прочитано всего " + increment.getAndIncrement() + ": Сообщение содержит ID = " +  message.getIntErrorText());
+        TimeUnit.SECONDS.sleep(ThreadLocalRandom.current().nextInt(0, 20));
         ack.acknowledge();
-        System.out.println("Закоммичено:" + incrementComm.getAndIncrement());
-//        System.out.println(meta.topic());
-//        System.out.println(meta.partition());
+        System.out.println("["+getId() + "] Обработано и закоммичено:" + incrementComm.getAndIncrement());
+
     }
 
 }
