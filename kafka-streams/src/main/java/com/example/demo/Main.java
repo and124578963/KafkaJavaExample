@@ -1,9 +1,13 @@
 package com.example.demo;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+
+@SpringBootApplication
 public class Main  {
     public static void main(String[] args){
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(KafkaStreamsConfig.class);
+        SpringApplication.run(Main.class, args);
+
     }
 
 }

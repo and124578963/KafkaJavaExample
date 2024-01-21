@@ -23,7 +23,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
-@PropertySource(value = "file:./application.properties", ignoreResourceNotFound = true)
+@PropertySource(value = "file:./kafka-PRODUCER/application.properties", ignoreResourceNotFound = true)
 @Configuration
 @EnableKafka
 public class Config {
@@ -51,8 +51,11 @@ public class Config {
 
         props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrap);
         props.put(ProducerConfig.LINGER_MS_CONFIG, linger);
+
         props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
         props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, JsonSerializer.class);
+        props.put(ProducerConfig.METRICS_RECORDING_LEVEL_CONFIG, "INFO");
+
 
         //.../ See https://kafka.apache.org/documentation/#producerconfigs for more properties
 
@@ -67,20 +70,6 @@ public class Config {
         exitTread.start();
         return new DefaultKafkaProducerFactory<>(props);
     }
-
-//    private Map<String, Object> senderProps(@Value("${bootstrap}") String bootstrap,
-//                                            @Value("${consumer.linger.ms.config}") int linger){
-//        Map<String, Object> props = new HashMap<>();
-//
-//        props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrap);
-//        props.put(ProducerConfig.LINGER_MS_CONFIG, linger);
-//
-//        props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
-//        props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, JsonSerializer.class);
-//
-//        //.../ See https://kafka.apache.org/documentation/#producerconfigs for more properties
-//        return props;
-//    }
 
     @Bean
     public

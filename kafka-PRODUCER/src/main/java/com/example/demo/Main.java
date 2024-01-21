@@ -9,7 +9,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Main  {
+
+    public static String message;
     public static void main(String[] args){
+        try {
+
+            message = args[0];
+            System.out.println(message);
+        } catch (Exception e){
+            message = "test";
+        }
 
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
 

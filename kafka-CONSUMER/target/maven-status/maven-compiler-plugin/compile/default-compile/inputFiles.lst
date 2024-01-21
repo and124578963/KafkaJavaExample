@@ -1,8 +1,8 @@
-C:\Users\andrey.pervushin\Desktop\java-kafka\kafka-CONSUMER\src\main\java\com\example\demo\message\RawMessage.java
-C:\Users\andrey.pervushin\Desktop\java-kafka\kafka-CONSUMER\src\main\java\com\example\demo\message\Message.java
-C:\Users\andrey.pervushin\Desktop\java-kafka\kafka-CONSUMER\src\main\java\com\example\demo\message\SmsMessage.java
-C:\Users\andrey.pervushin\Desktop\java-kafka\kafka-CONSUMER\src\main\java\com\example\demo\Main.java
-C:\Users\andrey.pervushin\Desktop\java-kafka\kafka-CONSUMER\src\main\java\com\example\demo\message\CdmMessage.java
-C:\Users\andrey.pervushin\Desktop\java-kafka\kafka-CONSUMER\src\main\java\com\example\demo\Config.java
-C:\Users\andrey.pervushin\Desktop\java-kafka\kafka-CONSUMER\src\main\java\com\example\demo\Listener.java
-C:\Users\andrey.pervushin\Desktop\java-kafka\kafka-CONSUMER\src\main\java\com\example\demo\message\ChannelMessage.java
+C:\Users\andrey.pervushin\Documents\GitHub\java-kafka\kafka-CONSUMER\src\main\java\com\example\demo\Main.java
+C:\Users\andrey.pervushin\Documents\GitHub\java-kafka\kafka-CONSUMER\src\main\java\com\example\demo\message\RawMessage.java
+C:\Users\andrey.pervushin\Documents\GitHub\java-kafka\kafka-CONSUMER\src\main\java\com\example\demo\Listener.java
+C:\Users\andrey.pervushin\Documents\GitHub\java-kafka\kafka-CONSUMER\src\main\java\com\example\demo\message\ChannelMessage.java
+C:\Users\andrey.pervushin\Documents\GitHub\java-kafka\kafka-CONSUMER\src\main\java\com\example\demo\Config.java
+C:\Users\andrey.pervushin\Documents\GitHub\java-kafka\kafka-CONSUMER\src\main\java\com\example\demo\message\Message.java
+C:\Users\andrey.pervushin\Documents\GitHub\java-kafka\kafka-CONSUMER\src\main\java\com\example\demo\message\CdmMessage.java
+C:\Users\andrey.pervushin\Documents\GitHub\java-kafka\kafka-CONSUMER\src\main\java\com\example\demo\message\SmsMessage.java
